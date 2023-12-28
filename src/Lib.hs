@@ -1,4 +1,4 @@
-module Lib where
+module Lib  where
 
 -- angle conversion
 deg2rad :: Double -> Double
