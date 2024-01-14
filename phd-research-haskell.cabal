@@ -30,6 +30,7 @@ library
       Model.LinearSingleTrack
       Model.MagicFormula
       Model.NonlinearSingleTrack
+      Type.StateSpace
   other-modules:
       Paths_phd_research_haskell
   autogen-modules:
