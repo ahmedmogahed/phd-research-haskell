@@ -1,11 +1,10 @@
 module Model.LinearSingleTrack where
 
 import Numeric.LinearAlgebra
+import Type.StateSpace
 
-linearSingleTrackModel :: Double -> (Matrix Double, Matrix Double, Matrix Double, Matrix Double)
-linearSingleTrackModel vx = do
-    (a, b, c, d)
-
+linearSingleTrackModel :: Double -> StateSpaceSystem
+linearSingleTrackModel vx = StateSpaceSystem a b c d
     where
     -- dynamic matrix
     a = (3><3)
