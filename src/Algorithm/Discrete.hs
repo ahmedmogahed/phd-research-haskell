@@ -2,34 +2,35 @@ module Algorithm.Discrete where
 
 import Numeric.LinearAlgebra.Data
 import Numeric.LinearAlgebra (scale, inv, expm)
+import Type.StateSpace
 
 
-eulerAlgorithm :: (Matrix Double, Matrix Double, Matrix Double, Matrix Double) -> Double -> (Matrix Double, Matrix Double, Matrix Double, Matrix Double)
-eulerAlgorithm (a,b,c,d) ts = (ad,bd,cd,dd)
+eulerAlgorithm :: StateSpaceSystem -> Double -> StateSpaceSystem
+eulerAlgorithm (StateSpaceSystem a b c d) ts = StateSpaceSystem ad bd cd dd
   where
     ad = ident (rows a) + scale ts a
     bd = scale ts b
     cd = c
     dd = d
 
-zeroOrderHold :: (Matrix Double, Matrix Double, Matrix Double, Matrix Double) -> Double -> (Matrix Double, Matrix Double, Matrix Double, Matrix Double)
-zeroOrderHold (a,b,c,d) ts = (ad,bd,cd,dd)
+zeroOrderHold :: StateSpaceSystem -> Double -> StateSpaceSystem
+zeroOrderHold (StateSpaceSystem a b c d) ts = StateSpaceSystem ad bd cd dd
   where
     ad = expm (scale ts a)
     bd = inv a <> (ad - ident (rows ad)) <> b
     cd = c
     dd = d
 
-backwardIntegration :: (Matrix Double, Matrix Double, Matrix Double, Matrix Double) -> Double -> (Matrix Double, Matrix Double, Matrix Double, Matrix Double)
-backwardIntegration (a,b,c,d) ts = (ad,bd,cd,dd)
+backwardIntegration :: StateSpaceSystem -> Double -> StateSpaceSystem
+backwardIntegration (StateSpaceSystem a b c d) ts = StateSpaceSystem ad bd cd dd
   where
     ad = inv (ident (rows a) - scale ts a)
     bd = ad <> scale ts b
     cd = c <> ad
     dd = d + (c <> bd)
 
-bilinearTransform ::  (Matrix Double, Matrix Double, Matrix Double, Matrix Double) -> Double -> (Matrix Double, Matrix Double, Matrix Double, Matrix Double)
-bilinearTransform (a,b,c,d) ts = (ad,bd,cd,dd)
+bilinearTransform ::  StateSpaceSystem -> Double -> StateSpaceSystem
+bilinearTransform (StateSpaceSystem a b c d) ts = StateSpaceSystem ad bd cd dd
   where
     ad = ad1 <> ad2
     bd = ad2 <> b
