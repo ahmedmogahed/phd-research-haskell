@@ -1,4 +1,4 @@
-module Model.MagicFormula where 
+module Model.MagicFormula (magicFormulaDeg, magicFormula) where 
 
 import Lib
 
@@ -17,7 +17,7 @@ magicFormula3 alpha fz gamma = d * sin(c * atan(b * phi)) + dSv
         -- main variables
         c = 1.3
         d = a1 * fzk ** 2 + a2 * fzk
-        b = a3 * sin(a4 * atan(a5 * fzk)) / (c * d) * (1 - a12 * abs(gammad))
+        b = a3 * sin(a4 * atan(a5 * fzk)) / (c * d) * (1 - a12 * abs gammad)
         phi = (1 - e) * alpha_dSh + e / b * atan(b * alpha_dSh)
         dSv = (a10 * fzk ** 2 + a11 * fzk) * gammad
 

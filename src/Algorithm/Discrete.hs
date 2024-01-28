@@ -1,9 +1,8 @@
-module Algorithm.Discrete where
+module Algorithm.Discrete (eulerAlgorithm, zeroOrderHold, backwardIntegration, bilinearTransform) where
 
 import Numeric.LinearAlgebra.Data
 import Numeric.LinearAlgebra (scale, inv, expm)
 import Type.StateSpace
-
 
 eulerAlgorithm :: StateSpaceSystem -> Double -> StateSpaceSystem
 eulerAlgorithm (StateSpaceSystem a b c d) ts = StateSpaceSystem ad bd cd dd
