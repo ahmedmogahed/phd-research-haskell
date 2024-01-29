@@ -1,4 +1,4 @@
-module Type.StateSpace where
+module Type.StateSpace (StateSpaceSystem (StateSpaceSystem)) where
 
 import Numeric.LinearAlgebra
 
