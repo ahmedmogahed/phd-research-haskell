@@ -1,12 +1,7 @@
 module Main (main) where
 
-import Model.LinearSingleTrack (linearSingleTrackModel)
-import Algorithm.Discrete (eulerAlgorithm)
+import Model.MagicFormula (magicFormulaDeg)
 
 main :: IO ()
 main = do
-  -- linear single track model
-  let ss = linearSingleTrackModel 10
-  -- model discretization
-  let ssd = eulerAlgorithm ss 0.1
-  print ssd
+  print $ map magicFormulaDeg [10,20,40,69]

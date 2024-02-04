@@ -1,4 +1,3 @@
-{-# OPTIONS_GHC -Wno-incomplete-patterns #-}
 module Model.NonlinearSingleTrack (nonlinearSingleTrack) where
 
 import Model.MagicFormula
@@ -29,3 +28,5 @@ nonlinearSingleTrack delta vx = singleTrackModelInner
         theta = 2491
         lf = 1.354
         lr = 1.372
+    
+    singleTrackModelInner _ _ = error "Not properly defined"
