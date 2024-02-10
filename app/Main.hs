@@ -1,7 +1,7 @@
 module Main (main) where
 
-import Model.MagicFormula (magicFormulaDeg)
+import Model.LinearSingleTrack
 
 main :: IO ()
 main = do
-  print $ map magicFormulaDeg [10,20,40,69]
+  print $ linearSingleTrackModel 12
