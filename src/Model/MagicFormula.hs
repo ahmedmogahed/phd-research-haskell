@@ -8,11 +8,11 @@ magicFormulaDeg = magicFormula . deg2rad
 
 -- Magic Formula functions with alpha in radians as argument
 magicFormula :: Double -> Double
-magicFormula alpha = magicFormula3 alpha 2000 0
+magicFormula alpha = magicFormulaRaw alpha 2000 0
 
--- Magic Formula functions with alpha (radians), force (newtons) and gamme (radians)
-magicFormula3 :: Double -> Double -> Double -> Double
-magicFormula3 alpha fz gamma = d * sin(c * atan(b * phi)) + dSv
+-- Magic Formula functions with alpha (radians), force (newtons) and gamma (radians)
+magicFormulaRaw :: Double -> Double -> Double -> Double
+magicFormulaRaw alpha fz gamma = d * sin(c * atan(b * phi)) + dSv
     where
     -- main variables
     c = 1.3
