@@ -12,7 +12,7 @@ magicFormula alpha = magicFormulaRaw alpha 2000 0
 
 -- Magic Formula functions with alpha (radians), force (newtons) and gamma (radians)
 magicFormulaRaw :: Double -> Double -> Double -> Double
-magicFormulaRaw alpha fz gamma = d * sin(c * atan(b * phi)) + dSv
+magicFormulaRaw alpha fz gamma = d * sin (c * atan (b * phi)) + dSv
     where
     -- main variables
     c = 1.3
