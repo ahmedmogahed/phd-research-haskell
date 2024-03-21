@@ -12,10 +12,10 @@ linearSingleTrackModel vx = StateSpaceSystem a b c d
         , 0, 0, 1
         , a31, 0, a33]
 
-    a11 = -(cah + cav) / (m * vx)
+    a11 = -((cah + cav) / (m * vx))
     a13 = (cah * lh - cav * lv - m * vx ** 2) / (m * vx ** 2)
     a31 = (cah * lh - cav * lv) / theta
-    a33 = (-cah * lh ** 2 - cav * lv ** 2) / (theta * vx)
+    a33 = (-(cah * lh ** 2) - cav * lv ** 2) / (theta * vx)
 
     -- Input matrix
     b = (3><1)
