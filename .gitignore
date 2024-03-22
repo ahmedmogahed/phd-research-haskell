@@ -13,3 +13,4 @@ cabal.project.local~
 cabal.sandbox.config
 .DS_Store
 .nova
+*.sublime-*

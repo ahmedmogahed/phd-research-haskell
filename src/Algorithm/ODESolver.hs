@@ -9,7 +9,7 @@ solveWithEuler :: ODESolverParams -> StateFunction -> StateVector
 solveWithEuler = solveWithMethod eulerMethod
 
 solveWithRK4 :: ODESolverParams -> StateFunction -> StateVector
-solveWithRK4 = solveWithMethod rungeKutta4Method 
+solveWithRK4 = solveWithMethod rungeKutta4Method
 
 solveWithEulerList :: ODESolverParams -> StateFunction -> Matrix Double
 solveWithEulerList = solveWithMethodList eulerMethod
@@ -23,9 +23,9 @@ solveWithMethod solverMethod (ODESolverParams xi u h tm) stateFnc = foldl (\x tn
 
 solveWithMethodList :: SolverFunction -> ODESolverParams -> StateFunction -> Matrix Double
 solveWithMethodList solverMethod (ODESolverParams xi u h tm) stateFnc = foldl solverFoldingFnc (asRow xi) [0, h .. tm - h]
-  where 
-  solverFoldingFnc = (\x tn -> x === asRow (solverMethod stateFnc (lastRow x) u tn h))
-  lastRow = (\m -> flatten (m ?? (TakeLast 1, All)))
+  where
+  solverFoldingFnc x tn = x === asRow (solverMethod stateFnc (lastRow x) u tn h)
+  lastRow m = flatten (m ?? (TakeLast 1, All))
 
 -- Solver methods 
 -- Euler method (https://en.wikipedia.org/wiki/Euler_method)
