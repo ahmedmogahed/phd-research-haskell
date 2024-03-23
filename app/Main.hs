@@ -1,11 +1,10 @@
 module Main (main) where
 
-import Model.SingleTrack (kinematicSingleTrack)
 import Numeric.LinearAlgebra
 import Algorithm.ODESolver
 import Type.Solver (ODESolverParams(..))
 import Algorithm.Interpolation
-
+import Model.SingleTrack
 
 main :: IO ()
 main = do
@@ -18,5 +17,4 @@ main = do
   let h = stepSize solverParams
   let tm = tmax solverParams
   let result = solveWithEulerList solverParams kinematicSingleTrack
-  print result
-  print $ linearInterpolation (vector [0, h .. tm]) result (1.2)
+  print $ linearInterpolation (vector [0, h .. tm]) result 1.2

@@ -1,4 +1,4 @@
-module Algorithm.Interpolation where
+module Algorithm.Interpolation (linearInterpolation) where
 
 import Numeric.LinearAlgebra
 
