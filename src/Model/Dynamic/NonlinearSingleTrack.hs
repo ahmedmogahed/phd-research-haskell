@@ -1,6 +1,6 @@
-module Model.NonlinearSingleTrack (nonlinearSingleTrack) where
+module Model.Dynamic.NonlinearSingleTrack (nonlinearSingleTrack) where
 
-import Model.MagicFormula
+import Model.Dynamic.MagicFormula
 
 nonlinearSingleTrack :: (Double -> Double) -> (Double -> Double) -> (Double -> [Double] -> [Double])
 nonlinearSingleTrack delta vx = singleTrackModelInner 

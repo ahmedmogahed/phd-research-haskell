@@ -4,7 +4,7 @@ import Numeric.LinearAlgebra
 import Algorithm.ODESolver
 import Type.Solver (ODESolverParams(..))
 import Algorithm.Interpolation
-import Model.SingleTrack
+import Model.Kinematic.SingleTrack
 
 main :: IO ()
 main = do

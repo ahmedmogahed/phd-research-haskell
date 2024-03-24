@@ -29,10 +29,10 @@ library
       Algorithm.Interpolation
       Algorithm.ODESolver
       Lib
-      Model.LinearSingleTrack
-      Model.MagicFormula
-      Model.NonlinearSingleTrack
-      Model.SingleTrack
+      Model.Dynamic.LinearSingleTrack
+      Model.Dynamic.MagicFormula
+      Model.Dynamic.NonlinearSingleTrack
+      Model.Kinematic.SingleTrack
       Type.ModelStateFunction
       Type.Solver
       Type.StateSpace

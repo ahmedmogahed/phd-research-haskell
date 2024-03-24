@@ -1,4 +1,4 @@
-module Model.LinearSingleTrack (linearSingleTrackModel) where
+module Model.Dynamic.LinearSingleTrack (linearSingleTrackModel) where
 
 import Numeric.LinearAlgebra
 import Type.StateSpace

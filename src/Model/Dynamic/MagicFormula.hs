@@ -1,4 +1,4 @@
-module Model.MagicFormula (magicFormulaDeg, magicFormula) where 
+module Model.Dynamic.MagicFormula (magicFormulaDeg, magicFormula) where 
 
 import Lib
 

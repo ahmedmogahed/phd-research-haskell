@@ -1,4 +1,4 @@
-module Model.SingleTrack (kinematicSingleTrack) where
+module Model.Kinematic.SingleTrack (kinematicSingleTrack) where
 
 import Numeric.LinearAlgebra
 import Type.ModelStateFunction
