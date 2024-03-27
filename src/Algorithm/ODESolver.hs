@@ -30,9 +30,7 @@ solveWithMethodList solverMethod (ODESolverParams xi u h tm) stateFnc = foldl so
 -- Solver methods 
 -- Euler method (https://en.wikipedia.org/wiki/Euler_method)
 eulerMethod :: SolverFunction
-eulerMethod stateFnc x u tn h = x + xns
-  where
-  xns = scalar h * stateFnc x u (h * tn)
+eulerMethod stateFnc x u tn h = x + scalar h * stateFnc x u tn
 
 -- Runge Kutta 4th order (https://en.wikipedia.org/wiki/Runge%E2%80%93Kutta_methods)
 rungeKutta4Method :: SolverFunction
