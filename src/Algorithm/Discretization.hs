@@ -1,4 +1,4 @@
-module Algorithm.Discrete (forwardEuler, zeroOrderHold, backwardIntegration, bilinearTransform) where
+module Algorithm.Discretization (forwardEuler, zeroOrderHold, backwardIntegration, bilinearTransform) where
 
 import Numeric.LinearAlgebra.Data
 import Numeric.LinearAlgebra (scale, inv, expm)
