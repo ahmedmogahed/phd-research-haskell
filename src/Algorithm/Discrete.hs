@@ -1,11 +1,11 @@
-module Algorithm.Discrete (eulerAlgorithm, zeroOrderHold, backwardIntegration, bilinearTransform) where
+module Algorithm.Discrete (forwardEuler, zeroOrderHold, backwardIntegration, bilinearTransform) where
 
 import Numeric.LinearAlgebra.Data
 import Numeric.LinearAlgebra (scale, inv, expm)
 import Type.StateSpace
 
-eulerAlgorithm :: StateSpaceSystem -> Double -> StateSpaceSystem
-eulerAlgorithm (StateSpaceSystem a b c d) ts = StateSpaceSystem ad bd cd dd
+forwardEuler :: StateSpaceSystem -> Double -> StateSpaceSystem
+forwardEuler (StateSpaceSystem a b c d) ts = StateSpaceSystem ad bd cd dd
   where
     ad = ident (rows a) + scale ts a
     bd = scale ts b
